@@ -1,0 +1,4 @@
+import { describe, expect, test } from "vitest";
+import { getSignatureStatus, sendForSignature, type SignAdapter } from "./core.js";
+const adapter: SignAdapter={vendor:"dropbox-sign",send:async r=>({vendor:r.vendor,signatureId:"sig_1",status:"sent"}),status:async id=>({vendor:"dropbox-sign",signatureId:id,status:"completed"})};
+describe("sign",()=>{test("dry run sends no vendor request",async()=>expect(await sendForSignature({vendor:"boldsign",document:"a.pdf",title:"NDA",signerEmail:"a@b.com"})).toMatchObject({dryRun:true,status:"preview"}));test("fixture adapter sends",async()=>expect(await sendForSignature({vendor:"dropbox-sign",document:"a",title:"t",signerEmail:"a@b.com"},{live:true,adapter})).toMatchObject({signatureId:"sig_1"}));test("dry run reads status",async()=>expect(await getSignatureStatus("boldsign","x")).toMatchObject({dryRun:true}));});
