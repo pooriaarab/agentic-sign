@@ -1,15 +1,20 @@
 {
   "name": "agentic-sign",
   "version": "0.1.1",
-  "description": "Send documents for signature with Dropbox Sign and BoldSign through a CLI, MCP server, or agent.",
+  "description": "Preview electronic signature requests with a TypeScript SDK, CLI, and MCP server, with experimental Dropbox Sign and BoldSign HTTP routes.",
   "keywords": [
     "dropbox-sign",
+    "hellosign",
     "boldsign",
-    "signature",
-    "send-documents",
+    "electronic-signature",
+    "esignature",
+    "document-signing",
+    "signature-request",
+    "typescript",
+    "sdk",
     "cli",
     "mcp",
-    "agent"
+    "dry-run"
   ],
   "license": "MIT",
   "author": "Pooria Arab",
