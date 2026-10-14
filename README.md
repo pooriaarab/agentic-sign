@@ -1,12 +1,19 @@
 # Agentic Sign
 
-Send one document for signature. Read its status. Dry run is the default.
+Agentic Sign sends documents for signature with Dropbox Sign (the HelloSign API) and BoldSign. The default command is a dry run, so it exits successfully without a network call.
 
 ## Install
 
 ```sh
 npm install agentic-sign
 ```
+
+## Vendors
+
+| Brand | Environment key | Live command |
+| --- | --- | --- |
+| Dropbox Sign | `DROPBOX_SIGN_API_KEY` | `agentic-sign send --vendor dropbox-sign --document nda.pdf --title NDA --email signer@example.com --live` |
+| BoldSign | `BOLDSIGN_API_KEY` | `agentic-sign send --vendor boldsign --document nda.pdf --title NDA --email signer@example.com --live` |
 
 ## Quick start
 
@@ -16,7 +23,7 @@ This previews a Dropbox Sign request. It does not call a vendor.
 npx agentic-sign send --vendor dropbox-sign --document nda.pdf --title NDA --email signer@example.com
 ```
 
-Add `--live` to call the vendor. Set `DROPBOX_SIGN_API_KEY` or `BOLDSIGN_API_KEY` first.
+Add `--live` to call a vendor. Set the vendor environment key first.
 
 ## Three uses
 
