@@ -1,6 +1,6 @@
 {
   "name": "agentic-sign",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Preview electronic signature requests with a TypeScript SDK, CLI, and MCP server, with experimental Dropbox Sign and BoldSign HTTP routes.",
   "keywords": [
     "dropbox-sign",
